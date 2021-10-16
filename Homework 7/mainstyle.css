@@ -1,0 +1,19 @@
+span.funky{
+	color:orange;
+	background-color:purple;
+	font-size:36;
+}
+#veryCool{
+	color:lightblue;
+	text-shadow: 2px 2px blue;
+	background-color:white;
+	font-family:"times new roman";
+}
+.contactClass{
+	color:green;
+	background-color:black;
+}
+#recognize{
+	color:white;
+	background-color:black;
+}
