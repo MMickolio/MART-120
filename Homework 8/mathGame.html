@@ -1,0 +1,56 @@
+<html>
+	<title>Math Game</title>
+	<head>
+		<script>
+			var trueAnswer;
+			function displayQuestion() {
+				var random1 = Math.floor(Math.random() * 10);
+				var random2 = Math.floor(Math.random() * 10);
+				trueAnswer = random1 + random2;
+				document.getElementById("question").innerHTML = "What is " + random1 + " + " + random2 + " ?";
+				}
+			var correctTally = 0;
+			var wrongTally = 0;
+			var totalTally = 0;
+			function checkAnswer() {
+				<!-- Check validity of answer -->
+				var tempAnswer = document.getElementById("answerText").value;
+				totalTally = totalTally + 1;
+				if (totalTally < 11) {
+					if (tempAnswer == trueAnswer) {
+						correctTally = correctTally + 1;
+						}
+					else {
+						wrongTally = wrongTally + 1;
+					}
+				}
+				else {
+				totalTally = 10;
+				}
+				document.getElementById("totalCorrect").innerHTML = correctTally + " CORRECT";
+				document.getElementById("totalWrong").innerHTML = wrongTally + " INCORRECT";
+				<!-- Percentage Calculation -->
+				var percentagePrev = (correctTally / totalTally) * 100;
+				var percentage = percentagePrev.toFixed(2);
+				document.getElementById("totalPercent").innerHTML = "Score: " + percentage + "%";
+				document.getElementById("answerText").focus();
+			}
+				
+			
+				
+				
+		</script>
+	</head>
+	<body onload="displayQuestion();">
+		<h2 id="question">Question Here</h2>
+		<p>Your answer: </p>
+		<input type="text" onfocus="this.value=''" id="answerText"></input><br>
+		<button class="button" id="buttonSubmit" onClick="checkAnswer();displayQuestion();">Submit Answer</button><br>
+		<p id="totalCorrect"></p>
+		<p id="totalWrong"></p>
+		<p id="totalPercent"></p>
+		<br><br>
+		<p><a href="dontContactMe.html">Back to contact info</a></p>
+	</body>
+
+</html>
